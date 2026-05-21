@@ -1,303 +1,374 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercicios de Respiracao - Respira</title>
-  <meta name="description" content="Exercícios guiados de respiracao para reduzir ansiedade e estresse. Tecnicas de relaxamento com animacoes e temporizador.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../CSS/style.css">
-  <script src="../JS/global-accessibility.js"></script>
-</head>
-<body>
-  <!-- Skip link para acessibilidade -->
-  <a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
-  
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-content">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">🌿</span>
-        Respira
-      </a>
-      <nav class="nav">
-        <a href="index.html" class="nav-link">Início</a>
-        <a href="sobre.html" class="nav-link">Sobre Nós</a>
-        <a href="respiracao.html" class="nav-link active">Respiração</a>
-        <a href="diario.html" class="nav-link">Diário</a>
-        <a href="apoio.html" class="nav-link">Apoio</a>
-        <a href="acessibilidade.html" class="nav-link">Acessibilidade</a>
-      </nav>
-      <div class="modo-acolhedor-toggle">
-        <label class="toggle-label" for="modoAcolhedor">
-          <span class="toggle-text">Modo Acolhedor</span>
-          <div class="toggle-switch">
-            <input type="checkbox" id="modoAcolhedor" class="toggle-input">
-            <span class="toggle-slider"></span>
-          </div>
-        </label>
-      </div>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercícios de Respiração - Respira</title>
+    <meta
+      name="description"
+      content="Exercícios guiados de respiração para reduzir ansiedade e estresse. Técnicas de relaxamento com animações e temporizador."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <script src="../JS/global-accessibility.js"></script>
+  </head>
+  <body>
+    <!-- Skip link para acessibilidade -->
+    <a href="#main-content" class="skip-link"
+      >Pular para o conteúdo principal</a
+    >
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu">
-    <a href="index.html" class="mobile-nav-link">Inicio</a>
-    <a href="sobre.html" class="mobile-nav-link">Sobre Nos</a>
-    <a href="respiracao.html" class="mobile-nav-link">Respiracao</a>
-    <a href="diario.html" class="mobile-nav-link">Diario</a>
-    <a href="apoio.html" class="mobile-nav-link">Apoio</a>
-    <a href="acessibilidade.html" class="mobile-nav-link">Acessibilidade</a>
-  </div>
-
-  <main id="main-content">
-    <!-- Hero Section -->
-    <section class="page-hero">
-      <div class="container">
-        <h1 class="page-title">Exercicios de Respiracao</h1>
-        <p class="page-subtitle">Tecnicas guiadas para acalmar a mente e relaxar o corpo</p>
-      </div>
-    </section>
-
-    <!-- Exercício Principal -->
-    <section class="section breathing-main-section">
-      <div class="container">
-        <div class="breathing-main">
-          <div class="breathing-display">
-            <div class="breathing-circle-large" id="breathingCircleLarge">
-              <div class="breathing-inner">
-                <span class="breathing-phase" id="breathingPhase">Preparado</span>
-                <span class="breathing-counter" id="breathingCounter">0</span>
-              </div>
-            </div>
-            <div class="breathing-progress">
-              <div class="progress-bar" id="progressBar"></div>
-            </div>
-          </div>
-
-          <div class="breathing-controls-panel">
-            <h2>Tecnica 4-7-8</h2>
-            <p class="breathing-description">Esta tecnica de respiracao ajuda a acalmar o sistema nervoso, reduzir a ansiedade e preparar o corpo para o relaxamento.</p>
-            
-            <div class="technique-steps">
-              <div class="technique-step">
-                <span class="step-number">4s</span>
-                <span class="step-label">Inspire pelo nariz</span>
-              </div>
-              <div class="technique-step">
-                <span class="step-number">7s</span>
-                <span class="step-label">Segure a respiracao</span>
-              </div>
-              <div class="technique-step">
-                <span class="step-number">8s</span>
-                <span class="step-label">Expire pela boca</span>
-              </div>
-            </div>
-
-            <div class="breathing-buttons">
-              <button class="btn btn-primary btn-large" id="startBreathingMain">
-                <span class="btn-icon">▶</span>
-                Iniciar Exercicio
-              </button>
-              <button class="btn btn-secondary btn-large" id="stopBreathingMain" style="display: none;">
-                <span class="btn-icon">⏸</span>
-                Pausar
-              </button>
-              <button class="btn btn-secondary" id="resetBreathingMain" style="display: none;">
-                <span class="btn-icon">↺</span>
-                Reiniciar
-              </button>
-            </div>
-
-            <div class="breathing-stats">
-              <div class="stat-item">
-                <span class="stat-label">Ciclos completos</span>
-                <span class="stat-value" id="cycleCount">0</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Tempo total</span>
-                <span class="stat-value" id="totalTime">0:00</span>
-              </div>
-            </div>
-
-            <!-- Som opcional -->
-            <div class="sound-toggle">
-              <label class="toggle-label" for="soundToggle">
-                <span class="toggle-text">🔔 Som suave</span>
-                <div class="toggle-switch">
-                  <input type="checkbox" id="soundToggle" class="toggle-input">
-                  <span class="toggle-slider"></span>
-                </div>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Outras Técnicas -->
-    <section class="section techniques-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Outras Tecnicas de Relaxamento</h2>
-          <p class="section-subtitle">Explore diferentes metodos para encontrar o que funciona melhor para voce</p>
-        </div>
-
-        <div class="techniques-grid">
-          <!-- Respiração Diafragmática -->
-          <div class="technique-card">
-            <div class="technique-icon">🫁</div>
-            <h3>Respiracao Diafragmatica</h3>
-            <p>Tambem conhecida como respiracao abdominal, esta tecnica envolve respirar profundamente usando o diafragma.</p>
-            <div class="technique-instructions">
-              <h4>Como fazer:</h4>
-              <ol>
-                <li>Deite-se ou sente-se confortavelmente</li>
-                <li>Coloque uma mao no peito e outra no abdomen</li>
-                <li>Inspire pelo nariz, expandindo o abdomen</li>
-                <li>Expire lentamente pela boca</li>
-                <li>A mao no peito deve permanecer parada</li>
-              </ol>
-            </div>
-          </div>
-
-          <!-- Respiração Quadrada -->
-          <div class="technique-card">
-            <div class="technique-icon">⬜</div>
-            <h3>Respiracao Quadrada (Box Breathing)</h3>
-            <p>Tecnica usada por atletas e militares para manter a calma em situacoes de estresse.</p>
-            <div class="technique-instructions">
-              <h4>Como fazer:</h4>
-              <ol>
-                <li>Inspire por 4 segundos</li>
-                <li>Segure por 4 segundos</li>
-                <li>Expire por 4 segundos</li>
-                <li>Segure por 4 segundos</li>
-                <li>Repita 4 vezes ou mais</li>
-              </ol>
-            </div>
-          </div>
-
-          <!-- Relaxamento Muscular -->
-          <div class="technique-card">
-            <div class="technique-icon">💪</div>
-            <h3>Relaxamento Muscular Progressivo</h3>
-            <p>Tecnica que envolve tensionar e relaxar grupos musculares para aliviar a tensao fisica.</p>
-            <div class="technique-instructions">
-              <h4>Como fazer:</h4>
-              <ol>
-                <li>Comece pelos pes: tensione por 5 segundos</li>
-                <li>Relaxe completamente</li>
-                <li>Suba para panturrilhas, coxas, abdomen...</li>
-                <li>Continue ate chegar no rosto</li>
-                <li>Sinta o corpo completamente relaxado</li>
-              </ol>
-            </div>
-          </div>
-
-          <!-- Grounding -->
-          <div class="technique-card">
-            <div class="technique-icon">🌍</div>
-            <h3>Tecnica 5-4-3-2-1 (Grounding)</h3>
-            <p>Tecnica de ancoragem que ajuda a trazer a mente para o momento presente.</p>
-            <div class="technique-instructions">
-              <h4>Como fazer:</h4>
-              <ol>
-                <li>Identifique 5 coisas que voce VE</li>
-                <li>Identifique 4 coisas que voce OUVE</li>
-                <li>Identifique 3 coisas que voce TOCA</li>
-                <li>Identifique 2 coisas que voce CHEIRA</li>
-                <li>Identifique 1 coisa que voce SABOREIA</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Dicas Section -->
-    <section class="section tips-section">
-      <div class="container">
-        <div class="tips-content">
-          <h2 class="section-title">Dicas para Melhorar sua Pratica</h2>
-          <div class="tips-grid">
-            <div class="tip-card">
-              <span class="tip-icon">🕐</span>
-              <h4>Pratique regularmente</h4>
-              <p>Reserve alguns minutos todos os dias para exercicios de respiracao. A consistencia traz resultados.</p>
-            </div>
-            <div class="tip-card">
-              <span class="tip-icon">🧘</span>
-              <h4>Ambiente tranquilo</h4>
-              <p>Escolha um local calmo e confortavel, livre de distrações, para sua pratica.</p>
-            </div>
-            <div class="tip-card">
-              <span class="tip-icon">📱</span>
-              <h4>Desconecte-se</h4>
-              <p>Desligue notificacoes e coloque o celular no modo silencioso durante a pratica.</p>
-            </div>
-            <div class="tip-card">
-              <span class="tip-icon">🌙</span>
-              <h4>Antes de dormir</h4>
-              <p>Exercicios de respiracao antes de dormir ajudam a melhorar a qualidade do sono.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <span class="logo">
+    <!-- Header -->
+    <header class="header">
+      <div class="container header-content">
+        <a href="index.html" class="logo">
           <span class="logo-icon">🌿</span>
           Respira
-        </span>
-        <p class="footer-tagline">Acolhimento digital para sua saude mental</p>
-      </div>
-      
-      <div class="footer-info">
-        <div class="footer-section">
-          <h4>Navegacao</h4>
-          <nav class="footer-nav">
-            <a href="index.html">Inicio</a>
-            <a href="sobre.html">Sobre Nos</a>
-            <a href="respiracao.html">Respiracao</a>
-            <a href="diario.html">Diario</a>
-            <a href="apoio.html">Canais de Apoio</a>
-            <a href="acessibilidade.html">Acessibilidade</a>
-          </nav>
+        </a>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">Início</a>
+          <a href="sobre.html" class="nav-link">Sobre Nós</a>
+          <a href="respiracao.html" class="nav-link active">Respiração</a>
+          <a href="diario.html" class="nav-link">Diário</a>
+          <a href="apoio.html" class="nav-link">Apoio</a>
+          <a href="acessibilidade.html" class="nav-link">Acessibilidade</a>
+        </nav>
+        <div class="modo-acolhedor-toggle">
+          <label class="toggle-label" for="modoAcolhedor">
+            <span class="toggle-text">Modo Acolhedor</span>
+            <div class="toggle-switch">
+              <input type="checkbox" id="modoAcolhedor" class="toggle-input" />
+              <span class="toggle-slider"></span>
+            </div>
+          </label>
         </div>
-        
-        <div class="footer-section">
-          <h4>Equipe</h4>
-          <p>Desenvolvido com 💚 por Valeska, Luciana, Deyse, Gabrielle e Gustavo</p>
-          <a href="https://github.com" target="_blank" class="footer-github">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            GitHub
-          </a>
-        </div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2024 Respira. Todos os direitos reservados.</p>
-        <p class="footer-disclaimer">Este site nao substitui acompanhamento profissional de saude mental.</p>
-      </div>
-    </div>
-  </footer>
+    </header>
 
-  <script src="app.js"></script>
-  <script src="breathing.js"></script>
-</body>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <a href="index.html" class="mobile-nav-link">Início</a>
+      <a href="sobre.html" class="mobile-nav-link">Sobre Nós</a>
+      <a href="respiracao.html" class="mobile-nav-link">Respiração</a>
+      <a href="diario.html" class="mobile-nav-link">Diário</a>
+      <a href="apoio.html" class="mobile-nav-link">Apoio</a>
+      <a href="acessibilidade.html" class="mobile-nav-link">Acessibilidade</a>
+    </div>
+
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section class="page-hero">
+        <div class="container">
+          <h1 class="page-title">Exercícios de Respiração</h1>
+          <p class="page-subtitle">
+            Técnicas guiadas para acalmar a mente e relaxar o corpo
+          </p>
+        </div>
+      </section>
+
+      <!-- Exercício Principal -->
+      <section class="section breathing-main-section">
+        <div class="container">
+          <div class="breathing-main">
+            <div class="breathing-display">
+              <div class="breathing-circle-large" id="breathingCircleLarge">
+                <div class="breathing-inner">
+                  <span class="breathing-phase" id="breathingPhase"
+                    >Preparado</span
+                  >
+                  <span class="breathing-counter" id="breathingCounter">0</span>
+                </div>
+              </div>
+              <div class="breathing-progress">
+                <div class="progress-bar" id="progressBar"></div>
+              </div>
+            </div>
+
+            <div class="breathing-controls-panel">
+              <h2>Técnica 4-7-8</h2>
+              <p class="breathing-description">
+                Esta técnica de respiração ajuda a acalmar o sistema nervoso,
+                reduzir a ansiedade e preparar o corpo para o relaxamento.
+              </p>
+
+              <div class="technique-steps">
+                <div class="technique-step">
+                  <span class="step-number">4s</span>
+                  <span class="step-label">Inspire pelo nariz</span>
+                </div>
+                <div class="technique-step">
+                  <span class="step-number">7s</span>
+                  <span class="step-label">Segure a respiração</span>
+                </div>
+                <div class="technique-step">
+                  <span class="step-number">8s</span>
+                  <span class="step-label">Expire pela boca</span>
+                </div>
+              </div>
+
+              <div class="breathing-buttons">
+                <button
+                  class="btn btn-primary btn-large"
+                  id="startBreathingMain"
+                >
+                  <span class="btn-icon">▶</span>
+                  Iniciar Exercício
+                </button>
+                <button
+                  class="btn btn-secondary btn-large"
+                  id="stopBreathingMain"
+                  style="display: none"
+                >
+                  <span class="btn-icon">⏸</span>
+                  Pausar
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  id="resetBreathingMain"
+                  style="display: none"
+                >
+                  <span class="btn-icon">↺</span>
+                  Reiniciar
+                </button>
+              </div>
+
+              <div class="breathing-stats">
+                <div class="stat-item">
+                  <span class="stat-label">Ciclos completos</span>
+                  <span class="stat-value" id="cycleCount">0</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Tempo total</span>
+                  <span class="stat-value" id="totalTime">0:00</span>
+                </div>
+              </div>
+
+              <!-- Som opcional -->
+              <div class="sound-toggle">
+                <label class="toggle-label" for="soundToggle">
+                  <span class="toggle-text">🔔 Som suave</span>
+                  <div class="toggle-switch">
+                    <input
+                      type="checkbox"
+                      id="soundToggle"
+                      class="toggle-input"
+                    />
+                    <span class="toggle-slider"></span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Outras Técnicas -->
+      <section class="section techniques-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Outras Técnicas de Relaxamento</h2>
+            <p class="section-subtitle">
+              Explore diferentes métodos para encontrar o que funciona melhor
+              para você
+            </p>
+          </div>
+
+          <div class="techniques-grid">
+            <!-- Respiração Diafragmática -->
+            <div class="technique-card">
+              <div class="technique-icon">🫁</div>
+              <h3>Respiração Diafragmática</h3>
+              <p>
+                Também conhecida como respiração abdominal, esta técnica envolve
+                respirar profundamente usando o diafragma.
+              </p>
+              <div class="technique-instructions">
+                <h4>Como fazer:</h4>
+                <ol>
+                  <li>Deite-se ou sente-se confortavelmente</li>
+                  <li>Coloque uma mão no peito e outra no abdômen</li>
+                  <li>Inspire pelo nariz, expandindo o abdômen</li>
+                  <li>Expire lentamente pela boca</li>
+                  <li>A mão no peito deve permanecer parada</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Respiração Quadrada -->
+            <div class="technique-card">
+              <div class="technique-icon">⬜</div>
+              <h3>Respiração Quadrada (Box Breathing)</h3>
+              <p>
+                Técnica usada por atletas e militares para manter a calma em
+                situações de estresse.
+              </p>
+              <div class="technique-instructions">
+                <h4>Como fazer:</h4>
+                <ol>
+                  <li>Inspire por 4 segundos</li>
+                  <li>Segure por 4 segundos</li>
+                  <li>Expire por 4 segundos</li>
+                  <li>Segure por 4 segundos</li>
+                  <li>Repita 4 vezes ou mais</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Relaxamento Muscular -->
+            <div class="technique-card">
+              <div class="technique-icon">💪</div>
+              <h3>Relaxamento Muscular Progressivo</h3>
+              <p>
+                Técnica que envolve tensionar e relaxar grupos musculares para
+                aliviar a tensão física.
+              </p>
+              <div class="technique-instructions">
+                <h4>Como fazer:</h4>
+                <ol>
+                  <li>Comece pelos pés: tensione por 5 segundos</li>
+                  <li>Relaxe completamente</li>
+                  <li>Suba para panturrilhas, coxas, abdômen...</li>
+                  <li>Continue até chegar no rosto</li>
+                  <li>Sinta o corpo completamente relaxado</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Grounding -->
+            <div class="technique-card">
+              <div class="technique-icon">🌍</div>
+              <h3>Técnica 5-4-3-2-1 (Grounding)</h3>
+              <p>
+                Técnica de ancoragem que ajuda a trazer a mente para o momento
+                presente.
+              </p>
+              <div class="technique-instructions">
+                <h4>Como fazer:</h4>
+                <ol>
+                  <li>Identifique 5 coisas que você vê</li>
+                  <li>Identifique 4 coisas que você ouve</li>
+                  <li>Identifique 3 coisas que você toca</li>
+                  <li>Identifique 2 coisas que você cheira</li>
+                  <li>Identifique 1 coisa que você saboreia</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dicas Section -->
+      <section class="section tips-section">
+        <div class="container">
+          <div class="tips-content">
+            <h2 class="section-title">Dicas para Melhorar sua Pratica</h2>
+            <div class="tips-grid">
+              <div class="tip-card">
+                <span class="tip-icon">🕐</span>
+                <h4>Pratique regularmente</h4>
+                <p>
+                  Reserve alguns minutos todos os dias para exercícios de
+                  respiração. A consistência traz resultados.
+                </p>
+              </div>
+              <div class="tip-card">
+                <span class="tip-icon">🧘</span>
+                <h4>Ambiente tranquilo</h4>
+                <p>
+                  Escolha um local calmo e confortável, livre de distrações,
+                  para sua prática.
+                </p>
+              </div>
+              <div class="tip-card">
+                <span class="tip-icon">📱</span>
+                <h4>Desconecte-se</h4>
+                <p>
+                  Desligue notificações e coloque o celular no modo silencioso
+                  durante a prática.
+                </p>
+              </div>
+              <div class="tip-card">
+                <span class="tip-icon">🌙</span>
+                <h4>Antes de dormir</h4>
+                <p>
+                  Exercícios de respiração antes de dormir ajudam a melhorar a
+                  qualidade do sono.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <span class="logo">
+            <span class="logo-icon">🌿</span>
+            Respira
+          </span>
+          <p class="footer-tagline">
+            Acolhimento digital para sua saúde mental
+          </p>
+        </div>
+
+        <div class="footer-info">
+          <div class="footer-section">
+            <h4>Navegação</h4>
+            <nav class="footer-nav">
+              <a href="index.html">Início</a>
+              <a href="sobre.html">Sobre Nós</a>
+              <a href="respiracao.html">Respiração</a>
+              <a href="diario.html">Diário</a>
+              <a href="apoio.html">Canais de Apoio</a>
+              <a href="acessibilidade.html">Acessibilidade</a>
+            </nav>
+          </div>
+
+          <div class="footer-section">
+            <h4>Equipe</h4>
+            <p>
+              Desenvolvido com 💚 por Valeska, Luciana, Deyse, Gabrielle e
+              Gustavo
+            </p>
+            <a href="https://github.com" target="_blank" class="footer-github">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Respira. Todos os direitos reservados.</p>
+          <p class="footer-disclaimer">
+            Este site não substitui acompanhamento profissional de saúde mental.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="breathing.js"></script>
+  </body>
 </html>
