@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canais de Apoio - Respira</title>
+  <meta name="description" content="Encontre canais de apoio emocional e psicologico. CVV, CAPS, emergencias e servicos de saude mental.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <script src="../JS/global-accessibility.js"></script>
+</head>
+<body>
+  <!-- Skip link para acessibilidade -->
+  <a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🌿</span>
+        Respira
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="sobre.html" class="nav-link">Sobre Nós</a>
+        <a href="respiracao.html" class="nav-link">Respiração</a>
+        <a href="diario.html" class="nav-link">Diário</a>
+        <a href="apoio.html" class="nav-link active">Apoio</a>
+        <a href="acessibilidade.html" class="nav-link">Acessibilidade</a>
+      </nav>
+      <div class="modo-acolhedor-toggle">
+        <label class="toggle-label" for="modoAcolhedor">
+          <span class="toggle-text">Modo Acolhedor</span>
+          <div class="toggle-switch">
+            <input type="checkbox" id="modoAcolhedor" class="toggle-input">
+            <span class="toggle-slider"></span>
+          </div>
+        </label>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html" class="mobile-nav-link">Inicio</a>
+    <a href="sobre.html" class="mobile-nav-link">Sobre Nos</a>
+    <a href="respiracao.html" class="mobile-nav-link">Respiracao</a>
+    <a href="diario.html" class="mobile-nav-link">Diario</a>
+    <a href="apoio.html" class="mobile-nav-link">Apoio</a>
+    <a href="acessibilidade.html" class="mobile-nav-link">Acessibilidade</a>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="page-hero page-hero-support">
+      <div class="container">
+        <h1 class="page-title">Canais de Apoio</h1>
+        <p class="page-subtitle">Voce nao esta sozinho. Existem pessoas prontas para ajudar.</p>
+      </div>
+    </section>
+
+    <!-- Mensagem de Emergência -->
+    <section class="emergency-banner">
+      <div class="container">
+        <div class="emergency-content">
+          <span class="emergency-icon">🆘</span>
+          <div class="emergency-text">
+            <strong>Se voce esta em crise ou pensando em se machucar, ligue agora:</strong>
+            <a href="tel:188" class="emergency-phone">188 (CVV) - 24 horas, gratuito e sigiloso</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Canais Principais -->
+    <section class="section support-main-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Servicos de Apoio</h2>
+          <p class="section-subtitle">Canais confiaveis para buscar ajuda profissional</p>
+        </div>
+
+        <div class="support-main-grid">
+          <!-- CVV -->
+          <div class="support-card-large">
+            <div class="support-card-header emergency-header">
+              <span class="support-large-icon">📞</span>
+              <div>
+                <h3>CVV - Centro de Valorizacao da Vida</h3>
+                <span class="support-badge">24 horas - Gratuito</span>
+              </div>
+            </div>
+            <p class="support-description">O CVV oferece apoio emocional e prevencao do suicidio. O atendimento e feito por voluntarios treinados, de forma totalmente sigilosa.</p>
+            <div class="support-contacts">
+              <a href="tel:188" class="contact-button contact-phone">
+                <span class="contact-icon">📱</span>
+                <span>Ligar: 188</span>
+              </a>
+              <a href="https://www.cvv.org.br" target="_blank" class="contact-button contact-web">
+                <span class="contact-icon">💬</span>
+                <span>Chat Online</span>
+              </a>
+              <a href="mailto:cvv@cvv.org.br" class="contact-button contact-email">
+                <span class="contact-icon">📧</span>
+                <span>E-mail</span>
+              </a>
+            </div>
+            <div class="support-info-box">
+              <h4>Sobre o CVV</h4>
+              <ul>
+                <li>Fundado em 1962 em Sao Paulo</li>
+                <li>Atendimento 100% sigiloso</li>
+                <li>Voluntarios preparados para ouvir</li>
+                <li>Nao e preciso se identificar</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CAPS -->
+          <div class="support-card-large">
+            <div class="support-card-header">
+              <span class="support-large-icon">🏥</span>
+              <div>
+                <h3>CAPS - Centro de Atencao Psicossocial</h3>
+                <span class="support-badge">Servico Publico</span>
+              </div>
+            </div>
+            <p class="support-description">Os CAPS sao servicos do SUS que oferecem atendimento em saude mental. Contam com equipes multidisciplinares de psicologos, psiquiatras e assistentes sociais.</p>
+            <div class="support-contacts">
+              <a href="https://www.gov.br/saude/pt-br/composicao/saps/caps" target="_blank" class="contact-button contact-web">
+                <span class="contact-icon">🔍</span>
+                <span>Encontrar CAPS</span>
+              </a>
+            </div>
+            <div class="support-info-box">
+              <h4>Tipos de CAPS</h4>
+              <ul>
+                <li><strong>CAPS I:</strong> Cidades menores (ate 70 mil habitantes)</li>
+                <li><strong>CAPS II:</strong> Cidades medias</li>
+                <li><strong>CAPS III:</strong> Funcionamento 24h</li>
+                <li><strong>CAPSi:</strong> Criancas e adolescentes</li>
+                <li><strong>CAPSad:</strong> Alcool e drogas</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Emergências -->
+          <div class="support-card-large">
+            <div class="support-card-header emergency-header">
+              <span class="support-large-icon">🚨</span>
+              <div>
+                <h3>Emergencias</h3>
+                <span class="support-badge">24 horas</span>
+              </div>
+            </div>
+            <p class="support-description">Em caso de emergencia medica, risco de vida ou situacao que exija atendimento imediato.</p>
+            <div class="support-contacts emergency-contacts-grid">
+              <a href="tel:192" class="contact-button contact-emergency">
+                <span class="contact-icon">🚑</span>
+                <span>SAMU: 192</span>
+              </a>
+              <a href="tel:190" class="contact-button contact-emergency">
+                <span class="contact-icon">👮</span>
+                <span>Policia: 190</span>
+              </a>
+              <a href="tel:193" class="contact-button contact-emergency">
+                <span class="contact-icon">🚒</span>
+                <span>Bombeiros: 193</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Apoio Psicológico Online -->
+          <div class="support-card-large">
+            <div class="support-card-header">
+              <span class="support-large-icon">💻</span>
+              <div>
+                <h3>Apoio Psicologico Online</h3>
+                <span class="support-badge">Atendimento Virtual</span>
+              </div>
+            </div>
+            <p class="support-description">Plataformas que conectam voce a psicologos licenciados para atendimento online. Algumas oferecem precos acessiveis ou atendimento social.</p>
+            <div class="support-contacts">
+              <a href="https://www.vittude.com" target="_blank" class="contact-button contact-web">
+                <span class="contact-icon">🌐</span>
+                <span>Vittude</span>
+              </a>
+              <a href="https://www.zenklub.com.br" target="_blank" class="contact-button contact-web">
+                <span class="contact-icon">🌐</span>
+                <span>Zenklub</span>
+              </a>
+              <a href="https://www.psicologiaviva.com.br" target="_blank" class="contact-button contact-web">
+                <span class="contact-icon">🌐</span>
+                <span>Psicologia Viva</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Perguntas Frequentes</h2>
+          <p class="section-subtitle">Duvidas comuns sobre buscar ajuda</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Quando devo procurar ajuda profissional?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Voce deve considerar buscar ajuda quando:</p>
+              <ul>
+                <li>Sentimentos negativos persistem por mais de duas semanas</li>
+                <li>Esta tendo dificuldade para realizar atividades do dia a dia</li>
+                <li>Seus relacionamentos estao sendo afetados</li>
+                <li>Esta tendo pensamentos de se machucar</li>
+                <li>Sente que precisa de alguem para conversar</li>
+              </ul>
+              <p>Lembre-se: buscar ajuda e um ato de coragem e autocuidado.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>O atendimento do CVV e realmente sigiloso?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sim, o sigilo e absoluto. Os voluntarios do CVV sao treinados para manter total confidencialidade. Voce nao precisa se identificar, e nenhuma informacao e registrada ou compartilhada.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>O CAPS e gratuito?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sim! O CAPS e um servico do Sistema Unico de Saude (SUS), portanto e 100% gratuito para todos os cidadaos brasileiros. O atendimento inclui consultas, medicamentos e acompanhamento continuo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Como funciona a terapia online?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>A terapia online funciona como a presencial, mas por videochamada. Voce escolhe um psicologo licenciado na plataforma, agenda um horario e realiza as sessoes de onde estiver. E regulamentada pelo Conselho Federal de Psicologia.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>E se eu nao tiver dinheiro para terapia?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Existem diversas opcoes gratuitas ou de baixo custo:</p>
+              <ul>
+                <li><strong>CAPS:</strong> Totalmente gratuito pelo SUS</li>
+                <li><strong>Clinicas-escola:</strong> Universidades oferecem atendimento social</li>
+                <li><strong>ONGs:</strong> Varias organizacoes oferecem apoio gratuito</li>
+                <li><strong>Plataformas online:</strong> Algumas tem programas de valor social</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Como posso ajudar alguem que esta em sofrimento?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Algumas dicas para ajudar alguem:</p>
+              <ul>
+                <li>Ouca sem julgamento</li>
+                <li>Demonstre que voce se importa</li>
+                <li>Evite frases como "vai passar" ou "tem gente pior"</li>
+                <li>Encoraje a buscar ajuda profissional</li>
+                <li>Ofereca acompanhar a pessoa ate o atendimento</li>
+                <li>Cuide tambem de voce mesmo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mensagem Final -->
+    <section class="section final-message-section">
+      <div class="container">
+        <div class="final-message">
+          <div class="message-icon">💚</div>
+          <h2>Voce importa</h2>
+          <p>Pedir ajuda e um ato de coragem, nao de fraqueza. Nao importa o que voce esta passando, existem pessoas dispostas a ouvir e ajudar. Voce merece cuidado e acolhimento.</p>
+          <div class="message-buttons">
+            <a href="tel:188" class="btn btn-primary btn-large">
+              📞 Ligar para o CVV (188)
+            </a>
+            <a href="respiracao.html" class="btn btn-secondary btn-large">
+              🌬️ Fazer exercicio de respiracao
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo">
+          <span class="logo-icon">🌿</span>
+          Respira
+        </span>
+        <p class="footer-tagline">Acolhimento digital para sua saude mental</p>
+      </div>
+      
+      <div class="footer-info">
+        <div class="footer-section">
+          <h4>Navegacao</h4>
+          <nav class="footer-nav">
+            <a href="index.html">Inicio</a>
+            <a href="sobre.html">Sobre Nos</a>
+            <a href="respiracao.html">Respiracao</a>
+            <a href="diario.html">Diario</a>
+            <a href="apoio.html">Canais de Apoio</a>
+            <a href="acessibilidade.html">Acessibilidade</a>
+          </nav>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Equipe</h4>
+          <p>Desenvolvido com 💚 por Valeska, Luciana, Deyse, Gabrielle e Gustavo</p>
+          <a href="https://github.com" target="_blank" class="footer-github">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Respira. Todos os direitos reservados.</p>
+        <p class="footer-disclaimer">Este site nao substitui acompanhamento profissional de saude mental.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="faq.js"></script>
+</body>
+</html>

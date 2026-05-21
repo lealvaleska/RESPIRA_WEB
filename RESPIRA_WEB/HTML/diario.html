@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diario Emocional - Respira</title>
+  <meta name="description" content="Registre suas emocoes e pensamentos no diario emocional. Acompanhe seu historico e cuide da sua saude mental.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <script src="../JS/global-accessibility.js"></script>
+</head>
+<body>
+  <!-- Skip link para acessibilidade -->
+  <a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🌿</span>
+        Respira
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="sobre.html" class="nav-link">Sobre Nós</a>
+        <a href="respiracao.html" class="nav-link">Respiração</a>
+        <a href="diario.html" class="nav-link active">Diário</a>
+        <a href="apoio.html" class="nav-link">Apoio</a>
+        <a href="acessibilidade.html" class="nav-link">Acessibilidade</a>
+      </nav>
+      <div class="modo-acolhedor-toggle">
+        <label class="toggle-label" for="modoAcolhedor">
+          <span class="toggle-text">Modo Acolhedor</span>
+          <div class="toggle-switch">
+            <input type="checkbox" id="modoAcolhedor" class="toggle-input">
+            <span class="toggle-slider"></span>
+          </div>
+        </label>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html" class="mobile-nav-link">Inicio</a>
+    <a href="sobre.html" class="mobile-nav-link">Sobre Nos</a>
+    <a href="respiracao.html" class="mobile-nav-link">Respiracao</a>
+    <a href="diario.html" class="mobile-nav-link">Diario</a>
+    <a href="apoio.html" class="mobile-nav-link">Apoio</a>
+    <a href="acessibilidade.html" class="mobile-nav-link">Acessibilidade</a>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Diario Emocional</h1>
+        <p class="page-subtitle">Um espaco seguro para registrar seus sentimentos e acompanhar sua jornada emocional</p>
+      </div>
+    </section>
+
+    <!-- Diário Principal -->
+    <section class="section diary-main-section">
+      <div class="container">
+        <div class="diary-main">
+          <!-- Formulário de Nova Entrada -->
+          <div class="diary-form-container">
+            <h2>Como voce esta se sentindo agora?</h2>
+            <form class="diary-form-full" id="diaryFormFull">
+              <!-- Seleção de Humor -->
+              <div class="mood-selection">
+                <label class="form-label">Selecione seu humor</label>
+                <div class="mood-grid">
+                  <button type="button" class="mood-option" data-mood="muito-mal" data-emoji="😢">
+                    <span class="mood-emoji">😢</span>
+                    <span class="mood-label">Muito mal</span>
+                  </button>
+                  <button type="button" class="mood-option" data-mood="mal" data-emoji="😕">
+                    <span class="mood-emoji">😕</span>
+                    <span class="mood-label">Mal</span>
+                  </button>
+                  <button type="button" class="mood-option" data-mood="neutro" data-emoji="😐">
+                    <span class="mood-emoji">😐</span>
+                    <span class="mood-label">Neutro</span>
+                  </button>
+                  <button type="button" class="mood-option" data-mood="bem" data-emoji="🙂">
+                    <span class="mood-emoji">🙂</span>
+                    <span class="mood-label">Bem</span>
+                  </button>
+                  <button type="button" class="mood-option" data-mood="muito-bem" data-emoji="😊">
+                    <span class="mood-emoji">😊</span>
+                    <span class="mood-label">Muito bem</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Tags de Emoções -->
+              <div class="emotion-tags">
+                <label class="form-label">O que voce esta sentindo? (opcional)</label>
+                <div class="tags-container">
+                  <button type="button" class="emotion-tag" data-tag="ansiedade">Ansiedade</button>
+                  <button type="button" class="emotion-tag" data-tag="estresse">Estresse</button>
+                  <button type="button" class="emotion-tag" data-tag="tristeza">Tristeza</button>
+                  <button type="button" class="emotion-tag" data-tag="alegria">Alegria</button>
+                  <button type="button" class="emotion-tag" data-tag="calma">Calma</button>
+                  <button type="button" class="emotion-tag" data-tag="gratidao">Gratidao</button>
+                  <button type="button" class="emotion-tag" data-tag="raiva">Raiva</button>
+                  <button type="button" class="emotion-tag" data-tag="medo">Medo</button>
+                  <button type="button" class="emotion-tag" data-tag="esperanca">Esperanca</button>
+                  <button type="button" class="emotion-tag" data-tag="solidao">Solidao</button>
+                </div>
+              </div>
+
+              <!-- Campo de Texto -->
+              <div class="diary-text-field">
+                <label class="form-label" for="diaryTextFull">Escreva sobre como voce esta se sentindo</label>
+                <textarea 
+                  id="diaryTextFull" 
+                  class="diary-textarea-full" 
+                  placeholder="Este e um espaco seguro para voce escrever livremente. O que esta em sua mente? Como foi seu dia? O que te preocupa ou te faz feliz?"
+                  rows="6"
+                ></textarea>
+                <span class="char-count"><span id="charCount">0</span>/500 caracteres</span>
+              </div>
+
+              <!-- Botão de Salvar -->
+              <button type="submit" class="btn btn-primary btn-large">
+                💚 Salvar Registro
+              </button>
+            </form>
+          </div>
+
+          <!-- Histórico -->
+          <div class="diary-history-container">
+            <div class="history-header">
+              <h2>Seus Registros</h2>
+              <div class="history-filters">
+                <select id="filterPeriod" class="filter-select">
+                  <option value="all">Todos</option>
+                  <option value="today">Hoje</option>
+                  <option value="week">Ultima semana</option>
+                  <option value="month">Ultimo mes</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Resumo Emocional -->
+            <div class="emotional-summary" id="emotionalSummary">
+              <h3>Resumo Emocional</h3>
+              <div class="summary-stats">
+                <div class="summary-stat">
+                  <span class="summary-emoji">😊</span>
+                  <span class="summary-count" id="positiveCount">0</span>
+                  <span class="summary-label">Positivos</span>
+                </div>
+                <div class="summary-stat">
+                  <span class="summary-emoji">😐</span>
+                  <span class="summary-count" id="neutralCount">0</span>
+                  <span class="summary-label">Neutros</span>
+                </div>
+                <div class="summary-stat">
+                  <span class="summary-emoji">😢</span>
+                  <span class="summary-count" id="negativeCount">0</span>
+                  <span class="summary-label">Dificeis</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lista de Entradas -->
+            <div class="diary-entries-list" id="diaryEntriesList">
+              <p class="diary-empty-full">Voce ainda nao tem registros. Comece agora a registrar como voce esta se sentindo!</p>
+            </div>
+
+            <!-- Botão de Limpar -->
+            <div class="history-actions">
+              <button class="btn btn-secondary btn-small" id="clearAllEntries">
+                🗑️ Limpar todos os registros
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios do Diário -->
+    <section class="section benefits-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Por que Manter um Diario Emocional?</h2>
+          <p class="section-subtitle">Escrever sobre seus sentimentos tem beneficios comprovados para a saude mental</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <span class="benefit-icon">🧠</span>
+            <h3>Autoconhecimento</h3>
+            <p>Identificar padroes emocionais ajuda a entender melhor suas reacoes e gatilhos.</p>
+          </div>
+          <div class="benefit-card">
+            <span class="benefit-icon">😌</span>
+            <h3>Reducao do Estresse</h3>
+            <p>Colocar pensamentos no papel ajuda a processar emocoes e reduzir a ansiedade.</p>
+          </div>
+          <div class="benefit-card">
+            <span class="benefit-icon">📈</span>
+            <h3>Acompanhamento</h3>
+            <p>Visualizar seu historico emocional ajuda a perceber progressos e areas que precisam de atencao.</p>
+          </div>
+          <div class="benefit-card">
+            <span class="benefit-icon">💪</span>
+            <h3>Resiliencia</h3>
+            <p>Refletir sobre momentos dificeis superados fortalece sua capacidade de enfrentar novos desafios.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dicas para Escrever -->
+    <section class="section writing-tips-section">
+      <div class="container">
+        <div class="writing-tips-content">
+          <h2 class="section-title">Dicas para Escrever</h2>
+          <div class="tips-list">
+            <div class="tip-item">
+              <span class="tip-number">1</span>
+              <div class="tip-content">
+                <h4>Seja honesto consigo mesmo</h4>
+                <p>Este e um espaco privado. Nao se julgue, apenas escreva o que sente.</p>
+              </div>
+            </div>
+            <div class="tip-item">
+              <span class="tip-number">2</span>
+              <div class="tip-content">
+                <h4>Nao se preocupe com a escrita</h4>
+                <p>Nao e preciso escrever perfeitamente. O importante e expressar seus sentimentos.</p>
+              </div>
+            </div>
+            <div class="tip-item">
+              <span class="tip-number">3</span>
+              <div class="tip-content">
+                <h4>Seja consistente</h4>
+                <p>Tente escrever regularmente, mesmo que seja apenas algumas palavras por dia.</p>
+              </div>
+            </div>
+            <div class="tip-item">
+              <span class="tip-number">4</span>
+              <div class="tip-content">
+                <h4>Releia quando precisar</h4>
+                <p>Revisitar entradas antigas pode trazer insights valiosos sobre sua jornada.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo">
+          <span class="logo-icon">🌿</span>
+          Respira
+        </span>
+        <p class="footer-tagline">Acolhimento digital para sua saude mental</p>
+      </div>
+      
+      <div class="footer-info">
+        <div class="footer-section">
+          <h4>Navegacao</h4>
+          <nav class="footer-nav">
+            <a href="index.html">Inicio</a>
+            <a href="sobre.html">Sobre Nos</a>
+            <a href="respiracao.html">Respiracao</a>
+            <a href="diario.html">Diario</a>
+            <a href="apoio.html">Canais de Apoio</a>
+            <a href="acessibilidade.html">Acessibilidade</a>
+          </nav>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Equipe</h4>
+          <p>Desenvolvido com 💚 por Valeska, Luciana, Deyse, Gabrielle e Gustavo</p>
+          <a href="https://github.com" target="_blank" class="footer-github">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Respira. Todos os direitos reservados.</p>
+        <p class="footer-disclaimer">Este site nao substitui acompanhamento profissional de saude mental.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="diary.js"></script>
+</body>
+</html>

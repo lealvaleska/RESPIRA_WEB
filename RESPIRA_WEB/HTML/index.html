@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Respira - Acolhimento Digital e Saúde Mental</title>
+  <meta name="description" content="Você não precisa passar por isso sozinho. O Respira oferece acolhimento emocional, exercícios de respiração e apoio para sua saúde mental.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <script src="../JS/global-accessibility.js"></script>
+</head>
+<body>
+  <!-- Skip link para acessibilidade -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+  
+  <!-- Header com toggle do Modo Acolhedor -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <span class="logo-icon">🌿</span>
+        Respira
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Início</a>
+        <a href="sobre.html" class="nav-link">Sobre Nós</a>
+        <a href="respiracao.html" class="nav-link">Respiração</a>
+        <a href="diario.html" class="nav-link">Diário</a>
+        <a href="apoio.html" class="nav-link">Apoio</a>
+        <a href="acessibilidade.html" class="nav-link">Acessibilidade</a>
+      </nav>
+      <!-- RN04: Toggle para Modo Acolhedor -->
+      <div class="modo-acolhedor-toggle">
+        <label class="toggle-label" for="modoAcolhedor">
+          <span class="toggle-text">Modo Acolhedor</span>
+          <div class="toggle-switch">
+            <input type="checkbox" id="modoAcolhedor" class="toggle-input">
+            <span class="toggle-slider"></span>
+          </div>
+        </label>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html" class="mobile-nav-link">Inicio</a>
+    <a href="sobre.html" class="mobile-nav-link">Sobre Nos</a>
+    <a href="respiracao.html" class="mobile-nav-link">Respiracao</a>
+    <a href="diario.html" class="mobile-nav-link">Diario</a>
+    <a href="apoio.html" class="mobile-nav-link">Apoio</a>
+    <a href="acessibilidade.html" class="mobile-nav-link">Acessibilidade</a>
+  </div>
+
+  <main id="main-content">
+    <!-- 1. HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">Você não precisa passar por isso sozinho.</h1>
+          <p class="hero-subtitle">
+            O Respira é um espaço seguro de acolhimento digital, criado para ajudar você a cuidar 
+            da sua saúde mental com carinho, técnicas de relaxamento e suporte emocional.
+          </p>
+          <div class="hero-buttons">
+            <a href="#apoio" class="btn btn-primary">Preciso de ajuda</a>
+            <a href="#como-voce-esta" class="btn btn-secondary">Quero me sentir melhor</a>
+          </div>
+        </div>
+        <div class="hero-illustration">
+          <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+          </div>
+          <div class="hero-image">
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="200" cy="200" r="180" fill="#E8F5E9" opacity="0.5"/>
+              <path d="M200 80C200 80 120 140 120 220C120 280 155 320 200 320C245 320 280 280 280 220C280 140 200 80 200 80Z" fill="#A8C5A8"/>
+              <path d="M200 100C200 100 140 150 140 215C140 265 167 300 200 300C233 300 260 265 260 215C260 150 200 100 200 100Z" fill="#B8D4B8"/>
+              <circle cx="200" cy="180" r="30" fill="#fff" opacity="0.6"/>
+              <path d="M200 320V380" stroke="#8B9D83" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#FAFAF8"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 2. SEÇÃO "COMO VOCÊ ESTÁ HOJE?" -->
+    <section id="como-voce-esta" class="section emotions-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Como você está se sentindo hoje?</h2>
+          <p class="section-subtitle">Escolha o que mais representa seu momento atual. Estamos aqui para ajudar.</p>
+        </div>
+        
+        <div class="emotions-grid">
+          <!-- Card Ansiedade -->
+          <button class="emotion-card" data-emotion="ansiedade">
+            <div class="emotion-icon">😰</div>
+            <h3 class="emotion-title">Ansiedade</h3>
+            <p class="emotion-desc">Pensamentos acelerados e preocupação constante</p>
+          </button>
+          
+          <!-- Card Estresse -->
+          <button class="emotion-card" data-emotion="estresse">
+            <div class="emotion-icon">😫</div>
+            <h3 class="emotion-title">Estresse</h3>
+            <p class="emotion-desc">Pressão e tensão do dia a dia</p>
+          </button>
+          
+          <!-- Card Tristeza -->
+          <button class="emotion-card" data-emotion="tristeza">
+            <div class="emotion-icon">😢</div>
+            <h3 class="emotion-title">Tristeza</h3>
+            <p class="emotion-desc">Sentimentos de melancolia e desânimo</p>
+          </button>
+          
+          <!-- Card Sobrecarga -->
+          <button class="emotion-card" data-emotion="sobrecarga">
+            <div class="emotion-icon">🥵</div>
+            <h3 class="emotion-title">Sobrecarga</h3>
+            <p class="emotion-desc">Muitas responsabilidades e pouco tempo</p>
+          </button>
+          
+          <!-- Card Crise Emocional (RN01) -->
+          <button class="emotion-card emotion-card-crisis" data-emotion="crise">
+            <div class="emotion-icon">💔</div>
+            <h3 class="emotion-title">Crise Emocional</h3>
+            <p class="emotion-desc">Preciso de ajuda urgente agora</p>
+          </button>
+        </div>
+
+        <!-- Conteúdo Dinâmico baseado na emoção selecionada -->
+        <div id="conteudo-emocional" class="emotional-content" style="display: none;">
+          <!-- Conteúdo será inserido dinamicamente via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerta de Apoio (RN03) - Exibido após 3 emoções negativas -->
+    <div id="alerta-apoio" class="support-alert" style="display: none;">
+      <div class="support-alert-content">
+        <button class="support-alert-close" aria-label="Fechar">&times;</button>
+        <div class="support-alert-icon">💚</div>
+        <h3>Estamos aqui por você</h3>
+        <p>Notamos que você tem passado por momentos difíceis. Que tal conversar com um profissional? Buscar apoio é um ato de coragem e autocuidado.</p>
+        <a href="#apoio" class="btn btn-primary">Ver opções de apoio</a>
+      </div>
+    </div>
+
+    <!-- 4. EXERCÍCIO RESPIRATÓRIO -->
+    <section id="respiracao" class="section breathing-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Exercício de Respiração</h2>
+          <p class="section-subtitle">Respire comigo. Alguns minutos de respiração consciente podem transformar seu dia.</p>
+        </div>
+        
+        <div class="breathing-container">
+          <div class="breathing-circle" id="breathingCircle">
+            <span class="breathing-text" id="breathingText">Iniciar</span>
+          </div>
+          
+          <div class="breathing-controls">
+            <button class="btn btn-primary" id="startBreathing">Começar exercício</button>
+            <button class="btn btn-secondary" id="stopBreathing" style="display: none;">Pausar</button>
+          </div>
+          
+          <div class="breathing-info">
+            <p>Técnica 4-7-8: Inspire por 4 segundos, segure por 7, expire por 8.</p>
+            <p class="breathing-tip">Esta técnica ajuda a acalmar o sistema nervoso e reduzir a ansiedade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. DIÁRIO EMOCIONAL -->
+    <section id="diario" class="section diary-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Diário Emocional</h2>
+          <p class="section-subtitle">Registre como você está se sentindo. Escrever pode ajudar a processar emoções.</p>
+        </div>
+        
+        <div class="diary-container">
+          <form class="diary-form" id="diaryForm">
+            <div class="diary-mood">
+              <label class="diary-label">Como está seu humor agora?</label>
+              <div class="mood-options">
+                <button type="button" class="mood-btn" data-mood="muito-mal">😢</button>
+                <button type="button" class="mood-btn" data-mood="mal">😕</button>
+                <button type="button" class="mood-btn" data-mood="neutro">😐</button>
+                <button type="button" class="mood-btn" data-mood="bem">🙂</button>
+                <button type="button" class="mood-btn" data-mood="muito-bem">😊</button>
+              </div>
+            </div>
+            
+            <div class="diary-entry">
+              <label class="diary-label" for="diaryText">O que está em sua mente?</label>
+              <textarea 
+                id="diaryText" 
+                class="diary-textarea" 
+                placeholder="Escreva livremente sobre como você está se sentindo hoje..."
+                rows="5"
+              ></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary diary-submit">Salvar registro</button>
+          </form>
+          
+          <div class="diary-history">
+            <h3 class="diary-history-title">Seus registros anteriores</h3>
+            <div id="diaryEntries" class="diary-entries">
+              <!-- Entradas serão carregadas via JavaScript do LocalStorage -->
+              <p class="diary-empty">Você ainda não tem registros. Comece agora!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SEÇÃO DE APOIO -->
+    <section id="apoio" class="section support-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Canais de Apoio</h2>
+          <p class="section-subtitle">Você não está sozinho. Existem pessoas prontas para ajudar.</p>
+        </div>
+        
+        <div class="support-grid">
+          <!-- CVV -->
+          <div class="support-card support-card-emergency">
+            <div class="support-icon">📞</div>
+            <h3 class="support-title">CVV - Centro de Valorização da Vida</h3>
+            <p class="support-desc">Atendimento 24 horas, gratuito e sigiloso para prevenção do suicídio.</p>
+            <div class="support-contact">
+              <a href="tel:188" class="support-phone">188</a>
+              <span class="support-divider">ou</span>
+              <a href="https://www.cvv.org.br" target="_blank" class="support-link">cvv.org.br</a>
+            </div>
+          </div>
+          
+          <!-- CAPS -->
+          <div class="support-card">
+            <div class="support-icon">🏥</div>
+            <h3 class="support-title">CAPS - Centro de Atenção Psicossocial</h3>
+            <p class="support-desc">Serviço público de saúde mental com equipe multidisciplinar.</p>
+            <div class="support-contact">
+              <p class="support-info">Procure o CAPS mais próximo de você</p>
+              <a href="https://www.gov.br/saude/pt-br/composicao/saps/caps" target="_blank" class="support-link">Encontrar CAPS</a>
+            </div>
+          </div>
+          
+          <!-- Apoio Psicológico Online -->
+          <div class="support-card">
+            <div class="support-icon">💬</div>
+            <h3 class="support-title">Apoio Psicológico Online</h3>
+            <p class="support-desc">Plataformas de atendimento psicológico online acessíveis.</p>
+            <div class="support-contact">
+              <a href="https://www.vittude.com" target="_blank" class="support-link">Vittude</a>
+              <span class="support-divider">•</span>
+              <a href="https://www.zenklub.com.br" target="_blank" class="support-link">Zenklub</a>
+            </div>
+          </div>
+          
+          <!-- Emergência -->
+          <div class="support-card support-card-emergency">
+            <div class="support-icon">🚨</div>
+            <h3 class="support-title">Emergência</h3>
+            <p class="support-desc">Em caso de emergência médica ou risco imediato.</p>
+            <div class="support-contact">
+              <a href="tel:192" class="support-phone">SAMU: 192</a>
+              <span class="support-divider">ou</span>
+              <a href="tel:190" class="support-phone">Polícia: 190</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mensagem de Acolhimento -->
+        <div class="support-message">
+          <p>💚 Lembre-se: pedir ajuda é um ato de coragem, não de fraqueza. Você merece cuidado e acolhimento.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. RODAPÉ -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo">
+          <span class="logo-icon">🌿</span>
+          Respira
+        </span>
+        <p class="footer-tagline">Acolhimento digital para sua saúde mental</p>
+      </div>
+      
+      <div class="footer-info">
+        <div class="footer-section">
+          <h4>Navegacao</h4>
+          <nav class="footer-nav">
+            <a href="index.html">Inicio</a>
+            <a href="sobre.html">Sobre Nos</a>
+            <a href="respiracao.html">Respiracao</a>
+            <a href="diario.html">Diario</a>
+            <a href="apoio.html">Canais de Apoio</a>
+            <a href="acessibilidade.html">Acessibilidade</a>
+          </nav>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Equipe</h4>
+          <p>Desenvolvido com 💚 por Valeska, Luciana, Deyse, Gabrielle e Gustavo</p>
+          <a href="https://github.com" target="_blank" class="footer-github">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Respira. Todos os direitos reservados.</p>
+        <p class="footer-disclaimer">Este site não substitui acompanhamento profissional de saúde mental.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

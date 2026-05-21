@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessibilidade e Conforto - Respira</title>
+  <meta name="description" content="Personalize sua experiencia no Respira. Modo acolhedor, ajuste de fonte, contraste e reducao de animacoes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <script src="../JS/global-accessibility.js"></script>
+</head>
+<body>
+  <!-- Skip link para acessibilidade -->
+  <a href="#main-content" class="skip-link">Pular para o conteudo principal</a>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🌿</span>
+        Respira
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="sobre.html" class="nav-link">Sobre Nós</a>
+        <a href="respiracao.html" class="nav-link">Respiração</a>
+        <a href="diario.html" class="nav-link">Diário</a>
+        <a href="apoio.html" class="nav-link">Apoio</a>
+        <a href="acessibilidade.html" class="nav-link active">Acessibilidade</a>
+      </nav>
+      <div class="modo-acolhedor-toggle">
+        <label class="toggle-label" for="modoAcolhedor">
+          <span class="toggle-text">Modo Acolhedor</span>
+          <div class="toggle-switch">
+            <input type="checkbox" id="modoAcolhedor" class="toggle-input">
+            <span class="toggle-slider"></span>
+          </div>
+        </label>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html" class="mobile-nav-link">Inicio</a>
+    <a href="sobre.html" class="mobile-nav-link">Sobre Nos</a>
+    <a href="respiracao.html" class="mobile-nav-link">Respiracao</a>
+    <a href="diario.html" class="mobile-nav-link">Diario</a>
+    <a href="apoio.html" class="mobile-nav-link">Apoio</a>
+    <a href="acessibilidade.html" class="mobile-nav-link">Acessibilidade</a>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Acessibilidade e Conforto</h1>
+        <p class="page-subtitle">Personalize sua experiencia para se sentir mais confortavel</p>
+      </div>
+    </section>
+
+    <!-- Modo Acolhedor Principal -->
+    <section class="section comfort-main-section">
+      <div class="container">
+        <div class="comfort-main">
+          <div class="comfort-hero">
+            <div class="comfort-icon-large">🤗</div>
+            <h2>Modo Acolhedor</h2>
+            <p>O Modo Acolhedor foi criado para proporcionar uma experiencia mais calma e confortavel. Quando ativado, o site se adapta para reduzir estimulos visuais e melhorar a legibilidade.</p>
+            
+            <div class="comfort-toggle-large">
+              <label class="comfort-toggle-label" for="modoAcolhedorMain">
+                <span class="toggle-status" id="toggleStatus">Desativado</span>
+                <div class="toggle-switch-large">
+                  <input type="checkbox" id="modoAcolhedorMain" class="toggle-input">
+                  <span class="toggle-slider-large"></span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="comfort-features">
+            <h3>O que muda quando ativado:</h3>
+            <div class="features-grid">
+              <div class="feature-item">
+                <span class="feature-icon">📝</span>
+                <div class="feature-text">
+                  <h4>Fonte maior</h4>
+                  <p>Tamanho do texto aumentado para melhor leitura</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🎨</span>
+                <div class="feature-text">
+                  <h4>Cores mais suaves</h4>
+                  <p>Paleta de cores ainda mais relaxante</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✨</span>
+                <div class="feature-text">
+                  <h4>Menos animacoes</h4>
+                  <p>Reducao de movimentos e transicoes</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">📏</span>
+                <div class="feature-text">
+                  <h4>Mais espacamento</h4>
+                  <p>Maior distancia entre elementos</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">👁️</span>
+                <div class="feature-text">
+                  <h4>Melhor contraste</h4>
+                  <p>Textos mais legiveis e claros</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">💚</span>
+                <div class="feature-text">
+                  <h4>Visual acolhedor</h4>
+                  <p>Ambiente mais calmo e confortavel</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controles de Acessibilidade -->
+    <section class="section accessibility-controls-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Controles de Acessibilidade</h2>
+          <p class="section-subtitle">Ajuste as configuracoes conforme sua necessidade</p>
+        </div>
+
+        <div class="controls-grid">
+          <!-- Tamanho da Fonte -->
+          <div class="control-card">
+            <div class="control-header">
+              <span class="control-icon">🔤</span>
+              <h3>Tamanho da Fonte</h3>
+            </div>
+            <p>Ajuste o tamanho do texto para melhor leitura</p>
+            <div class="font-size-controls">
+              <button class="font-btn" id="fontDecrease" aria-label="Diminuir fonte">A-</button>
+              <span class="font-current" id="fontCurrent">100%</span>
+              <button class="font-btn" id="fontIncrease" aria-label="Aumentar fonte">A+</button>
+            </div>
+            <button class="btn btn-secondary btn-small" id="fontReset">Restaurar padrao</button>
+          </div>
+
+          <!-- Espacamento -->
+          <div class="control-card">
+            <div class="control-header">
+              <span class="control-icon">↔️</span>
+              <h3>Espacamento</h3>
+            </div>
+            <p>Aumente o espaco entre linhas e elementos</p>
+            <div class="spacing-options">
+              <button class="spacing-btn active" data-spacing="normal">Normal</button>
+              <button class="spacing-btn" data-spacing="medium">Medio</button>
+              <button class="spacing-btn" data-spacing="large">Grande</button>
+            </div>
+          </div>
+
+          <!-- Animações -->
+          <div class="control-card">
+            <div class="control-header">
+              <span class="control-icon">🎬</span>
+              <h3>Animacoes</h3>
+            </div>
+            <p>Controle os efeitos visuais e movimentos</p>
+            <label class="control-toggle">
+              <span>Reduzir animacoes</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="reduceMotion" class="toggle-input">
+                <span class="toggle-slider"></span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Alto Contraste -->
+          <div class="control-card">
+            <div class="control-header">
+              <span class="control-icon">🌓</span>
+              <h3>Contraste</h3>
+            </div>
+            <p>Melhore a visibilidade do texto</p>
+            <label class="control-toggle">
+              <span>Alto contraste</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="highContrast" class="toggle-input">
+                <span class="toggle-slider"></span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Preview -->
+        <div class="preview-section">
+          <h3>Visualizacao</h3>
+          <div class="preview-box" id="previewBox">
+            <h4>Exemplo de Texto</h4>
+            <p>Este e um exemplo de como o texto aparecera com as configuracoes atuais. Voce pode ajustar o tamanho da fonte, espacamento e contraste para encontrar a combinacao mais confortavel para voce.</p>
+            <p>O Respira foi desenvolvido pensando em todos os usuarios, buscando oferecer uma experiencia acessivel e acolhedora.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recursos de Acessibilidade -->
+    <section class="section resources-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nosso Compromisso com Acessibilidade</h2>
+          <p class="section-subtitle">Recursos implementados para tornar o Respira acessivel a todos</p>
+        </div>
+
+        <div class="resources-grid">
+          <div class="resource-card">
+            <span class="resource-icon">⌨️</span>
+            <h3>Navegacao por Teclado</h3>
+            <p>Todo o site pode ser navegado usando apenas o teclado. Use Tab para navegar entre elementos e Enter para ativar.</p>
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">📖</span>
+            <h3>Leitores de Tela</h3>
+            <p>Estrutura semantica e atributos ARIA para compatibilidade com tecnologias assistivas.</p>
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">📱</span>
+            <h3>Design Responsivo</h3>
+            <p>Layout adaptavel a diferentes tamanhos de tela, desde celulares ate desktops.</p>
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">🎨</span>
+            <h3>Contraste Adequado</h3>
+            <p>Cores escolhidas para garantir legibilidade seguindo as diretrizes WCAG.</p>
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">🔍</span>
+            <h3>Textos Escalaveis</h3>
+            <p>Fontes que podem ser aumentadas sem perda de funcionalidade ou quebra de layout.</p>
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">🎯</span>
+            <h3>Areas de Clique Amplas</h3>
+            <p>Botoes e links com tamanho adequado para facilitar a interacao.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dicas de Conforto -->
+    <section class="section comfort-tips-section">
+      <div class="container">
+        <div class="comfort-tips-content">
+          <h2 class="section-title">Dicas de Conforto Digital</h2>
+          <div class="comfort-tips-grid">
+            <div class="comfort-tip">
+              <span class="tip-icon">💡</span>
+              <div>
+                <h4>Ajuste o brilho da tela</h4>
+                <p>Reduza o brilho em ambientes escuros para diminuir a fadiga ocular.</p>
+              </div>
+            </div>
+            <div class="comfort-tip">
+              <span class="tip-icon">⏰</span>
+              <div>
+                <h4>Faca pausas regulares</h4>
+                <p>A cada 20 minutos, olhe para algo a 20 metros por 20 segundos (regra 20-20-20).</p>
+              </div>
+            </div>
+            <div class="comfort-tip">
+              <span class="tip-icon">🌙</span>
+              <div>
+                <h4>Use o modo noturno</h4>
+                <p>Ative o filtro de luz azul do seu dispositivo a noite.</p>
+              </div>
+            </div>
+            <div class="comfort-tip">
+              <span class="tip-icon">📐</span>
+              <div>
+                <h4>Posicione a tela corretamente</h4>
+                <p>Mantenha a tela a cerca de um braco de distancia e na altura dos olhos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback -->
+    <section class="section feedback-section">
+      <div class="container">
+        <div class="feedback-content">
+          <h2>Ajude-nos a Melhorar</h2>
+          <p>Sua opiniao e muito importante para continuarmos melhorando a acessibilidade do Respira. Se voce encontrou alguma dificuldade ou tem sugestoes, entre em contato conosco.</p>
+          <div class="feedback-actions">
+            <a href="mailto:acessibilidade@respira.com" class="btn btn-primary">
+              📧 Enviar Feedback
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo">
+          <span class="logo-icon">🌿</span>
+          Respira
+        </span>
+        <p class="footer-tagline">Acolhimento digital para sua saude mental</p>
+      </div>
+      
+      <div class="footer-info">
+        <div class="footer-section">
+          <h4>Navegacao</h4>
+          <nav class="footer-nav">
+            <a href="index.html">Inicio</a>
+            <a href="sobre.html">Sobre Nos</a>
+            <a href="respiracao.html">Respiracao</a>
+            <a href="diario.html">Diario</a>
+            <a href="apoio.html">Canais de Apoio</a>
+            <a href="acessibilidade.html">Acessibilidade</a>
+          </nav>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Equipe</h4>
+          <p>Desenvolvido com 💚 por Valeska, Luciana, Deyse, Gabrielle e Gustavo</p>
+          <a href="https://github.com" target="_blank" class="footer-github">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Respira. Todos os direitos reservados.</p>
+        <p class="footer-disclaimer">Este site nao substitui acompanhamento profissional de saude mental.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="accessibility.js"></script>
+</body>
+</html>
