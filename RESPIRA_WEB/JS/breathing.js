@@ -2,50 +2,54 @@
    BREATHING.JS - Exercício de Respiração Avançado
    ===================================================== */
 
-(function() {
+(function () {
   // Estado do exercício
   const breathingState = {
     active: false,
-    phase: 'idle',
+    phase: "idle",
     cycleCount: 0,
     totalSeconds: 0,
     timer: null,
-    soundEnabled: false
+    soundEnabled: false,
+    audioContext: null,
   };
 
   // Elementos DOM
   const elements = {};
 
   // Inicialização
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // Verificar se estamos na página de respiração
-    if (!document.getElementById('breathingCircleLarge')) return;
+    if (!document.getElementById("breathingCircleLarge")) return;
 
     // Capturar elementos
-    elements.circle = document.getElementById('breathingCircleLarge');
-    elements.phase = document.getElementById('breathingPhase');
-    elements.counter = document.getElementById('breathingCounter');
-    elements.progressBar = document.getElementById('progressBar');
-    elements.startBtn = document.getElementById('startBreathingMain');
-    elements.stopBtn = document.getElementById('stopBreathingMain');
-    elements.resetBtn = document.getElementById('resetBreathingMain');
-    elements.cycleCount = document.getElementById('cycleCount');
-    elements.totalTime = document.getElementById('totalTime');
-    elements.soundToggle = document.getElementById('soundToggle');
+    elements.circle = document.getElementById("breathingCircleLarge");
+    elements.phase = document.getElementById("breathingPhase");
+    elements.counter = document.getElementById("breathingCounter");
+    elements.progressBar = document.getElementById("progressBar");
+    elements.startBtn = document.getElementById("startBreathingMain");
+    elements.stopBtn = document.getElementById("stopBreathingMain");
+    elements.resetBtn = document.getElementById("resetBreathingMain");
+    elements.cycleCount = document.getElementById("cycleCount");
+    elements.totalTime = document.getElementById("totalTime");
+    elements.soundToggle = document.getElementById("soundToggle");
 
     // Event listeners
     if (elements.startBtn) {
-      elements.startBtn.addEventListener('click', startBreathingExercise);
+      elements.startBtn.addEventListener("click", startBreathingExercise);
     }
     if (elements.stopBtn) {
-      elements.stopBtn.addEventListener('click', stopBreathingExercise);
+      elements.stopBtn.addEventListener("click", stopBreathingExercise);
     }
     if (elements.resetBtn) {
-      elements.resetBtn.addEventListener('click', resetBreathingExercise);
+      elements.resetBtn.addEventListener("click", resetBreathingExercise);
     }
     if (elements.soundToggle) {
-      elements.soundToggle.addEventListener('change', (e) => {
+      elements.soundToggle.addEventListener("change", (e) => {
         breathingState.soundEnabled = e.target.checked;
+        if (breathingState.soundEnabled) {
+          resumeAudioContext();
+        }
       });
     }
   });
@@ -57,11 +61,16 @@
     if (breathingState.active) return;
 
     breathingState.active = true;
-    
+
     // Atualizar UI
-    elements.startBtn.style.display = 'none';
-    elements.stopBtn.style.display = 'inline-flex';
-    elements.resetBtn.style.display = 'inline-flex';
+    elements.startBtn.style.display = "none";
+    elements.stopBtn.style.display = "inline-flex";
+    elements.resetBtn.style.display = "inline-flex";
+
+    // Garantir que o AudioContext esteja ativo antes de tocar som
+    if (breathingState.soundEnabled) {
+      resumeAudioContext();
+    }
 
     // Iniciar temporizador total
     breathingState.timer = setInterval(() => {
@@ -78,10 +87,10 @@
    */
   function stopBreathingExercise() {
     breathingState.active = false;
-    
+
     // Atualizar UI
-    elements.startBtn.style.display = 'inline-flex';
-    elements.stopBtn.style.display = 'none';
+    elements.startBtn.style.display = "inline-flex";
+    elements.stopBtn.style.display = "none";
     elements.startBtn.innerHTML = '<span class="btn-icon">▶</span> Continuar';
 
     // Parar temporizador
@@ -90,8 +99,8 @@
     }
 
     // Atualizar fase
-    elements.phase.textContent = 'Pausado';
-    elements.circle.className = 'breathing-circle-large';
+    elements.phase.textContent = "Pausado";
+    elements.circle.className = "breathing-circle-large";
   }
 
   /**
@@ -99,7 +108,7 @@
    */
   function resetBreathingExercise() {
     breathingState.active = false;
-    breathingState.phase = 'idle';
+    breathingState.phase = "idle";
     breathingState.cycleCount = 0;
     breathingState.totalSeconds = 0;
 
@@ -109,17 +118,18 @@
     }
 
     // Atualizar UI
-    elements.startBtn.style.display = 'inline-flex';
-    elements.stopBtn.style.display = 'none';
-    elements.resetBtn.style.display = 'none';
-    elements.startBtn.innerHTML = '<span class="btn-icon">▶</span> Iniciar Exercicio';
-    
-    elements.phase.textContent = 'Preparado';
-    elements.counter.textContent = '0';
-    elements.cycleCount.textContent = '0';
-    elements.totalTime.textContent = '0:00';
-    elements.progressBar.style.width = '0%';
-    elements.circle.className = 'breathing-circle-large';
+    elements.startBtn.style.display = "inline-flex";
+    elements.stopBtn.style.display = "none";
+    elements.resetBtn.style.display = "none";
+    elements.startBtn.innerHTML =
+      '<span class="btn-icon">▶</span> Iniciar Exercicio';
+
+    elements.phase.textContent = "Preparado";
+    elements.counter.textContent = "0";
+    elements.cycleCount.textContent = "0";
+    elements.totalTime.textContent = "0:00";
+    elements.progressBar.style.width = "0%";
+    elements.circle.className = "breathing-circle-large";
   }
 
   /**
@@ -129,20 +139,29 @@
     if (!breathingState.active) return;
 
     // Fase 1: Inspirar (4 segundos)
-    breathingState.phase = 'inhale';
-    updatePhaseUI('Inspire...', 'inhale');
+    breathingState.phase = "inhale";
+    updatePhaseUI("Inspire...", "inhale");
+    if (breathingState.soundEnabled) {
+      playSound();
+    }
     animateProgress(4, () => {
       if (!breathingState.active) return;
 
       // Fase 2: Segurar (7 segundos)
-      breathingState.phase = 'hold';
-      updatePhaseUI('Segure...', 'hold');
+      breathingState.phase = "hold";
+      updatePhaseUI("Segure...", "hold");
+      if (breathingState.soundEnabled) {
+        playSound();
+      }
       animateProgress(7, () => {
         if (!breathingState.active) return;
 
         // Fase 3: Expirar (8 segundos)
-        breathingState.phase = 'exhale';
-        updatePhaseUI('Expire...', 'exhale');
+        breathingState.phase = "exhale";
+        updatePhaseUI("Expire...", "exhale");
+        if (breathingState.soundEnabled) {
+          playSound();
+        }
         animateProgress(8, () => {
           if (!breathingState.active) return;
 
@@ -167,7 +186,7 @@
    */
   function updatePhaseUI(text, phase) {
     elements.phase.textContent = text;
-    elements.circle.className = 'breathing-circle-large ' + phase;
+    elements.circle.className = "breathing-circle-large " + phase;
   }
 
   /**
@@ -175,7 +194,7 @@
    */
   function animateProgress(duration, callback) {
     let elapsed = 0;
-    elements.progressBar.style.width = '0%';
+    elements.progressBar.style.width = "0%";
     elements.counter.textContent = duration;
 
     const interval = setInterval(() => {
@@ -189,7 +208,7 @@
       const progress = (elapsed / duration) * 100;
 
       elements.counter.textContent = remaining;
-      elements.progressBar.style.width = progress + '%';
+      elements.progressBar.style.width = progress + "%";
 
       if (elapsed >= duration) {
         clearInterval(interval);
@@ -204,15 +223,31 @@
   function updateTotalTime() {
     const minutes = Math.floor(breathingState.totalSeconds / 60);
     const seconds = breathingState.totalSeconds % 60;
-    elements.totalTime.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    elements.totalTime.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
   }
 
   /**
    * Toca um som suave (usando Web Audio API)
    */
+  function resumeAudioContext() {
+    if (!breathingState.audioContext) {
+      breathingState.audioContext = new (
+        window.AudioContext || window.webkitAudioContext
+      )();
+    }
+    if (breathingState.audioContext.state === "suspended") {
+      breathingState.audioContext.resume().catch(() => {
+        // Ignorar se não for possível retomar
+      });
+    }
+  }
+
   function playSound() {
     try {
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      resumeAudioContext();
+      const audioContext =
+        breathingState.audioContext ||
+        new (window.AudioContext || window.webkitAudioContext)();
       const oscillator = audioContext.createOscillator();
       const gainNode = audioContext.createGain();
 
@@ -220,10 +255,13 @@
       gainNode.connect(audioContext.destination);
 
       oscillator.frequency.value = 440; // Nota A4
-      oscillator.type = 'sine';
+      oscillator.type = "sine";
 
       gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+      gainNode.gain.exponentialRampToValueAtTime(
+        0.01,
+        audioContext.currentTime + 0.5,
+      );
 
       oscillator.start(audioContext.currentTime);
       oscillator.stop(audioContext.currentTime + 0.5);
