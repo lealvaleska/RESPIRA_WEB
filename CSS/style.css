@@ -2051,11 +2051,14 @@ body {
 
 .summary-stats {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
 }
 
 .summary-stat {
   text-align: center;
+  min-width: 110px;
 }
 
 .summary-emoji {
