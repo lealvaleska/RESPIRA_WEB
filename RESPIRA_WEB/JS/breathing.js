@@ -242,31 +242,37 @@
     }
   }
 
-  function playSound() {
-    try {
-      resumeAudioContext();
-      const audioContext =
-        breathingState.audioContext ||
-        new (window.AudioContext || window.webkitAudioContext)();
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
+ function playSound() {
+  try {
+    resumeAudioContext();
 
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
+    const audioContext = breathingState.audioContext;
 
-      oscillator.frequency.value = 440; // Nota A4
-      oscillator.type = "sine";
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
 
-      gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(
-        0.01,
-        audioContext.currentTime + 0.5,
-      );
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
 
-      oscillator.start(audioContext.currentTime);
-      oscillator.stop(audioContext.currentTime + 0.5);
-    } catch (e) {
-      // Ignorar erros de áudio
-    }
+    oscillator.frequency.value = 220;
+    oscillator.type = "sine";
+
+    gainNode.gain.setValueAtTime(0.001, audioContext.currentTime);
+
+    gainNode.gain.exponentialRampToValueAtTime(
+      0.08,
+      audioContext.currentTime + 0.1
+    );
+
+    gainNode.gain.exponentialRampToValueAtTime(
+      0.001,
+      audioContext.currentTime + 1
+    );
+
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 1);
+  } catch (e) {
+    // Ignorar erros de áudio
   }
+}
 })();
