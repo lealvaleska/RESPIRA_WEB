@@ -70,7 +70,7 @@
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
-  --space-lg: 2rem;
+  --space-lg: 1.75rem;
   --space-xl: 3rem;
   --space-2xl: 4rem;
 
@@ -1277,7 +1277,7 @@ body {
 }
 
 .page-title {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: var(--space-sm);
@@ -1291,7 +1291,7 @@ body {
 }
 
 /* =====================================================
-   SOBRE NÓS PAGE
+   Sobre PAGE
    ===================================================== */
 
 /* Mission Section */
@@ -1416,12 +1416,14 @@ body {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-md);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
 }
 
 .team-card {
-  padding: var(--space-lg);
+  padding: 2rem;
+  min-height: 420px;
   background: white;
   border-radius: var(--radius-lg);
   text-align: center;
@@ -1450,6 +1452,16 @@ body {
   font-weight: 700;
   color: white;
 }
+.team-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  display: block;
+  border: 4px solid var(--sage-green-light);
+  box-shadow: var(--shadow-md);
+}
 
 .team-name {
   font-size: 1.25rem;
@@ -1473,6 +1485,21 @@ body {
   font-size: 0.875rem;
   color: var(--text-secondary);
   line-height: 1.5;
+}
+
+/* outras classes */
+
+/* RESPONSIVIDADE */
+@media (max-width: 1200px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* Social Section */
