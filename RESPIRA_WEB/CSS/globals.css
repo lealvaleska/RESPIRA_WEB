@@ -1,7 +1,41 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-
 @custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../FONTS/Nunito-Light.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('../FONTS/Nunito-LightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('../FONTS/Nunito-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('../FONTS/Nunito-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('../FONTS/Nunito-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('../FONTS/Nunito-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
 
 :root {
   --background: oklch(1 0 0);
