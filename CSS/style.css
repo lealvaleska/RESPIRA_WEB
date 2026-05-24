@@ -3188,13 +3188,36 @@ body {
     width: 100%;
   }
 }
-
+/* TESTE AQUI 
 @media (max-width: 600px) {
   .header-content {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-sm);
+  }*/
+
+  @media (max-width: 1024px) {
+  .header-content {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-sm);
   }
+.nav {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .modo-acolhedor-toggle {
+    margin-left: auto;
+  }
+}
+
+/* TESTE ACABA AQUI */
+
 
   .logo {
     margin-bottom: var(--space-sm);
